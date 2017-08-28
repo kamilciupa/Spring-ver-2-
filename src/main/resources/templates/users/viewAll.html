@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout :: site-head">
+    <title >View Post</title>
+</head>
+
+<body>
+
+<header th:replace="layout :: site-header" />
+
+<main id="users">
+        <div>
+        <h2>Users</h2>
+        <a href= "#" th:each="p : ${bloggers}" th:text="${p.username}">Work Begins on HTML5.1</a>
+        </div>
+</main>
+
+<footer th:replace="layout :: site-footer" />
+
+</body>
+
+</html>
