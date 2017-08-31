@@ -1,5 +1,6 @@
 package pl.ciupa.Controller;
 
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -37,6 +38,32 @@ public class BlogerControllers {
         model.addAttribute("bloggers",blogers);
         return "users/viewAll";
     }
+
+    @RequestMapping("users/view/{id}")
+    public String viewById(@PathVariable Long id, Model model){
+        Blogers bloger = userService.findById(id);
+        if(bloger == null){
+            notificationService.addErrorMessage("Cannot find user " + id);;
+            return "redirect:/";
+        }
+        model.addAttribute("blogger", bloger);
+        return "users/view";
+    }
+
+    @RequestMapping("users/view/{id}/delete")
+    public String delete(@PathVariable Long id, Model model){
+        Blogers bloger = userService.findById(id);
+        if(bloger == null){
+            notificationService.addErrorMessage("Cannot find user " + id);;
+            return "redirect:/";
+        }
+        userService.deleteById(id);
+        notificationService.addInfoMessage("Success");
+        return "users/viewAll";
+    }
+
+
+
 /*
     @RequestMapping("users/register")
     public String createPage(){

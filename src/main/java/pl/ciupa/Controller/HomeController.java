@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import pl.ciupa.Entity.Post;
 import pl.ciupa.Service.PostService;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -21,10 +22,17 @@ public class HomeController {
 
     @RequestMapping("/")
     public String index(Model model) {
-        List<Post> latest5Posts = postService.findLatest5();
-        model.addAttribute("latest5posts", latest5Posts);
-        List<Post> latest3Posts = latest5Posts.stream()
-                .limit(3).collect(Collectors.toList());
+        List<Post> latest5Posts = postService.findAll();
+        List<Post> l5 = new ArrayList<>();
+        for(int i = 0; i < 5 ; i++ ){
+            l5.add(latest5Posts.get(latest5Posts.size()-1-i));
+        }
+
+        model.addAttribute("latest5posts", l5);
+        List<Post> latest3Posts =new ArrayList<>();
+        for(int i = 0 ; i < 3 ; i++){
+            latest3Posts.add(l5.get(i));
+        }
         model.addAttribute("latest3posts", latest3Posts);
         return "index";
     }

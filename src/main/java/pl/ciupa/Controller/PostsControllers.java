@@ -7,10 +7,12 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import pl.ciupa.Entity.Blogers;
 import pl.ciupa.Entity.Post;
 import pl.ciupa.Forms.CreatePostForm;
 import pl.ciupa.Service.NotificationService;
 import pl.ciupa.Service.PostService;
+import pl.ciupa.Service.UserService;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -23,6 +25,9 @@ public class PostsControllers {
 
     @Autowired
     private PostService postService;
+
+    @Autowired
+    private UserService userService;
 
     @Autowired
     private NotificationService notificationService;
@@ -70,7 +75,7 @@ public class PostsControllers {
            }
            String title = createPostForm.getTitle();
            String body = createPostForm.getBody();
-           Post post = new Post(title, body, null);
+           Post post = new Post(title, body, userService.findById(1L));
            post = postService.create(post);
            return "posts/viewAll";
        }

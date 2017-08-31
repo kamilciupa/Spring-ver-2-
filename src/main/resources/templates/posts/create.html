@@ -9,15 +9,15 @@
 
 <header th:replace="layout :: site-header" />
 
-<h1>Create book entry czy coś tam kurwa xD</h1>
+<h1>Dodaj Post</h1>
 
 <form method="post" th:object="${createPostForm}">
-    <div><label for="title">Username:</label></div>
+    <div><label for="title">Title:</label></div>
     <input id="title" type="text" name="title" th:value="*{title}" />
     <!--<span class="formError" th:if="${#fields.hasErrors('title')}"-->
           <!--th:errors="*{title}">Invalid username</span>-->
 
-    <div><label for="body">Username:</label></div>
+    <div><label for="body">Opis:</label></div>
     <input id="body" type="text" name="body" th:value="*{body}" />
     <!--<span class="formError" th:if="${#fields.hasErrors('body')}"-->
           <!--th:errors="*{body}">Invalid username</span>-->

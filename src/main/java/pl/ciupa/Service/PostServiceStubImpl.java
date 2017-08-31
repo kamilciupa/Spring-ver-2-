@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 /**
  * Created by Kamil on 2017-08-22.
  */
-
+/*
 @Service
 public class PostServiceStubImpl implements PostService {
     private List<Post> posts = new ArrayList<Post>() {{
@@ -78,3 +78,4 @@ public class PostServiceStubImpl implements PostService {
         throw new RuntimeException("Post not found: " + id);
     }
 }
+*/

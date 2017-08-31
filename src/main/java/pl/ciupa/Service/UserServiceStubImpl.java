@@ -1,4 +1,4 @@
-package pl.ciupa.Service;
+/*package pl.ciupa.Service;
 
 import org.springframework.stereotype.Service;
 import pl.ciupa.Entity.Blogers;
@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Objects;
 /**
  * Created by Kamil on 2017-08-23.
- */
+ *//*
 @Service
 public class UserServiceStubImpl implements UserService {
 
@@ -48,3 +48,4 @@ public class UserServiceStubImpl implements UserService {
 
     }
 }
+*/

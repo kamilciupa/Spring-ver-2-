@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout :: site-head">
+    <title th:text="${blogger.username}">View Post</title>
+</head>
+
+<body>
+
+<header th:replace="layout :: site-header" />
+
+<main id="posts">
+    <article>
+        <h1> User bio</h1>
+        <h2 class="title" th:text="${blogger.username}">Username</h2>
+        <h2 class="title" th:text="${blogger.fullName}">Full name</h2>
+    </article>
+</main>
+
+<footer th:replace="layout :: site-footer" />
+
+</body>
+
+</html>

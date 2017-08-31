@@ -12,7 +12,7 @@ import java.util.Date;
 public class Post {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column(nullable = false, length = 300)
@@ -36,12 +36,12 @@ public class Post {
         this.author = author;
     }
 
-    public Post(Long id, String title, String body, Blogers author) {
+  /*  public Post(Long id, String title, String body, Blogers author) {
         this.id = id;
         this.title = title;
         this.body = body;
         this.author = author;
-    }
+    }*/
 
     public Long getId() {
         return id;

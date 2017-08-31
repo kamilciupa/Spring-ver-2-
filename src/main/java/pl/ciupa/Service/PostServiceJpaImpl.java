@@ -1,7 +1,9 @@
 package pl.ciupa.Service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.stereotype.Service;
 import pl.ciupa.Entity.Post;
 import pl.ciupa.Repositories.PostRepository;
 
@@ -10,6 +12,9 @@ import java.util.List;
 /**
  * Created by Kamil on 2017-08-28.
  */
+
+@Service
+@Primary
 public class PostServiceJpaImpl implements PostService{
     @Autowired
     private PostRepository postRepo;

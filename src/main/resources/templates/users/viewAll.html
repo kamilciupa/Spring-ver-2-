@@ -12,7 +12,7 @@
 <main id="users">
         <div>
         <h2>Users</h2>
-        <a href= "#" th:each="p : ${bloggers}" th:text="${p.username}">Work Begins on HTML5.1</a>
+        <a href= "#" th:each="p : ${bloggers}" th:text="${p.username}" th:href="@{/ users/view/{id}/(id=${p.id})}">Work Begins on HTML5.1</a>
         </div>
 </main>
 
